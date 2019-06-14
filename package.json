@@ -5,7 +5,10 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "export": "next export"
+    "export": "next export",
+    "dev:netlify": "next",
+    "build:netlify": "next build && next export",
+    "start:netlify": "serve ./out"
   },
   "dependencies": {
     "@babel/runtime": "^7.4.5",
