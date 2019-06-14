@@ -382,13 +382,13 @@ section p {
     line-height: 1.5;
     margin-bottom: 20px;
     word-wrap: break-word;
-    font-size: 15px;
+    font-size: 25px;
     font-weight: 400;
     letter-spacing: -0.25px;
 }
 
 section h1 {
-    font-size: 150%;
+    font-size: 300%;
     font-weight: 900;
     line-height: 1;
     letter-spacing: -0.05em;
@@ -396,7 +396,7 @@ section h1 {
 }
 
 section h2 {
-    font-size: 125%;
+    font-size: 250%;
     font-weight: bolder;
     line-height: 1;
     letter-spacing: -0.05em;
@@ -510,10 +510,16 @@ nav {
 }
 
 .list {
-    height: 50px;
+    height: 100px;
     position: relative;
     cursor: pointer;
     z-index: 9999;
+}
+
+@media only screen and (max-width: 480px) { 
+    .list {
+        height: 50px;
+    }
 }
 
 .l1,
@@ -531,7 +537,8 @@ nav {
 }
 
 nav>ul {
-    width: 50px;
+    width: 100px;
+    height:100px;
     list-style: none;
 }
 
@@ -1306,7 +1313,7 @@ main>article>section.worklist>ul>li {
 main>article>section.worklist>ul>li>a>h2 {
     position: relative;
     left: 0;
-    font-size: 1.25em;
+    font-size: 2.25em;
     bottom: 0;
     margin: 0 auto;
     margin-top: 0.5em;
@@ -1320,7 +1327,7 @@ a.dash-link {
  margin-bottom: 20px;
  padding-bottom: 2.5px;
  word-wrap: break-word;
- font-size: 1.25em;
+ font-size: 2.25em;
  font-weight: 900;
  letter-spacing: -1px;
  text-decoration: none;

@@ -14,10 +14,10 @@ function Post({ data: { error, webs } }) {
   let image = web.Image !== null ? <span id="image" className="imgHero"
     style={{
       backgroundImage: `url(https://strapi.hulea.org/${web.Image.url})`,
-      border: `1em solid #111`,
+      border: `2em solid #111`,
       marginBottom: `20px`
     }}></span> : '';
-  if (error) return <ErrorMessage message='Error loading blog post.' />
+  if (error) return <ErrorMessage message='Error loading post.' />
   if (web) {
     return (
       <article>
@@ -30,12 +30,14 @@ function Post({ data: { error, webs } }) {
         <div key={web.id}>
           <h1>{web.Title}</h1>
           {image}
-          <a className="dash-link" prefetch="true" target="_blank" href={web.Link}>{web.Title}</a>
+          <a className="dash-link" target="_blank" href={web.Link}>{web.Title}</a>
           <ReactMarkdown source={web.Description} />
         </div>
       </section>
       <PostList title={web.URL} extraClass="worklist"></PostList>
-      <style jsx>{`
+      <
+      // @ts-ignore
+      style jsx>{`
 
         `}</style>
       </article>

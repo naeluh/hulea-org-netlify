@@ -28,7 +28,7 @@ export default ({ children, Head }) => (
       }
       section {
         padding-bottom: 20px;
-        max-width: 900px;
+        max-width: 95%;
         margin: 0 auto;
       }
       button {

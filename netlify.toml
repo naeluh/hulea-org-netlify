@@ -1,0 +1,7 @@
+[build]
+publish = "site"
+command = "npm run build"
+functions = "functions"
+
+[context.production.environment]
+NPM_VERSION = "6.4.1"

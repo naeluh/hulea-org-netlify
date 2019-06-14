@@ -45,7 +45,7 @@ function PostList({ data: { loading, error, webs }, title, extraClass }) {
           }
           section {
             padding-bottom: 20px;
-            max-width: 900px;
+            max-width: 95%;
             margin: 0 auto;
           }
           a {
@@ -57,14 +57,14 @@ function PostList({ data: { loading, error, webs }, title, extraClass }) {
             list-style: none;
           }
           li {
-            border: 1rem solid #111;
+            border: 2rem solid #111;
             margin-bottom: 2em;
           }
           h2 {
             position: absolute;
-            bottom: -10px;
-            left: 10px;
-            padding: 10px 25px;
+            bottom: 5px;
+            left: 25px;
+            padding: 20px 30px;
             color: #fff;
             background-color: #111;
           }

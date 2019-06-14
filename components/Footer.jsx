@@ -16,6 +16,12 @@ const Footer = () => (
     <p> <Link  href="/about"><a title="About" alt="About" prefetch="true">About</a></Link></p>
     <p> <Link  href="/contact"><a title="Contact" alt="Contact" prefetch="true">Contact</a></Link></p>
 	</div>
+  <style jsx>{`
+        p {
+          font-size: 24px;
+          line-height: 36px;
+        }
+      `}</style>
 	<div></div>
 </footer>
 )

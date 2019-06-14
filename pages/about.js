@@ -1,9 +1,8 @@
-import App from '../components/App'
-import Header from '../components/Header'
-import Page from '../components/BasicPage'
-import withApollo from '../lib/withApollo'
-import withReduxSaga from '../lib/withReduxSaga'
-import Footer from '../components/Footer'
+import App from "../components/App";
+import Header from "../components/Header";
+import Page from "../components/BasicPage";
+import withApollo from "../lib/withApollo";
+import Footer from "../components/Footer";
 
 class About extends React.Component {
   render() {
@@ -13,8 +12,8 @@ class About extends React.Component {
         <Page />
         <Footer />
       </App>
-    )
+    );
   }
 }
 
-  export default withReduxSaga(withApollo(About))
+export default withApollo(About);

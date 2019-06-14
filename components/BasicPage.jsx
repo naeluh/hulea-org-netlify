@@ -1,21 +1,22 @@
-import React from 'react'
-import { withRouter } from 'next/router'
-import { graphql } from 'react-apollo'
-import gql from 'graphql-tag'
-import ErrorMessage from './ErrorMessage'
-import ReactMarkdown from 'react-markdown'
-import Head from 'next/head'
+import React from "react";
+import { withRouter } from "next/router";
+import { graphql } from "react-apollo";
+import gql from "graphql-tag";
+import ErrorMessage from "./ErrorMessage";
+import ReactMarkdown from "react-markdown";
+import Head from "next/head";
 
 function Post({ data: { error, basics } }) {
-  let basic = basics !== undefined ? basics[0] : ''
-  if (error || basics === '') return <ErrorMessage message='Error loading blog post.' />
+  let basic = basics !== undefined ? basics[0] : "";
+  if (error || basics === "")
+    return <ErrorMessage message="Error loading blog post." />;
   if (basic) {
     return (
       <section>
         <Head>
           <title>{basic.Title}</title>
-          <meta name="title" content={basic.Title}></meta>
-          <meta name="description" content={basic.Body}></meta>
+          <meta name="title" content={basic.Title} />
+          <meta name="description" content={basic.Body} />
         </Head>
         <div key={basic.id}>
           <h1>{basic.Title}</h1>
@@ -25,30 +26,16 @@ function Post({ data: { error, basics } }) {
           * {
             box-sizing: border-box;
           }
-          section {
-            padding-bottom: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-          }
           li {
             display: block;
             margin-bottom: 10px;
-          }
-          figure {
-            align-items: center;
-            display: flex;
-            margin-bottom: 2rem;
-            position: relative;
-            border: 1rem solid #000;
           }
           a {
             text-decoration: none;
             padding-bottom: 0;
             border: 0;
             color: #000;
-            font-weight:400;
-          }
-          span {
+            font-weight: 400;
           }
           ul {
             margin: 0;
@@ -59,14 +46,14 @@ function Post({ data: { error, basics } }) {
           }
         `}</style>
       </section>
-    )
+    );
   }
-  return <div>Loading</div>
+  return <div>Loading</div>;
 }
 
 const post = gql`
   query basics($url: String!) {
-    basics( where: { URL: $url }, limit: 1) {
+    basics(where: { URL: $url }, limit: 1) {
       Title
       _id
       Image {
@@ -81,19 +68,19 @@ const post = gql`
       updatedAt
     }
   }
-`
+`;
 
 // The `graphql` wrapper executes a GraphQL query and makes the results
 // available on the `data` prop of the wrapped component (PostList)
 const ComponentWithMutation = graphql(post, {
   options: ({ router: { pathname } }) => ({
     variables: {
-      url: pathname.replace('/','')
+      url: pathname.replace("/", "")
     }
   }),
   props: ({ data }) => ({
     data
   })
-})(Post)
+})(Post);
 
-export default withRouter(ComponentWithMutation)
+export default withRouter(ComponentWithMutation);

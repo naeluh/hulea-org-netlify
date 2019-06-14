@@ -63,13 +63,13 @@ class Home extends React.Component {
         <style jsx>{`
         #title{
           font-weight: 900;
-          font-size: 50px;
+          font-size: 100px;
           line-height: 1;
           letter-spacing: -0.05em;
         }
         p {
           font-weight: 600;
-          font-size: 24px;
+          font-size: 45px;
           line-height: 1.1;
           letter-spacing: -0.03em;
         }
