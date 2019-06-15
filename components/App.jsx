@@ -1,17 +1,18 @@
-import '../css/font/inter.css';
-import '../css/main.css';
-import Document, { Head, Main, NextScript } from 'next/document'
+import "../css/font/inter.css";
+import "../css/main.css";
+import Document, { Head, Main, NextScript } from "next/document";
 
 export default ({ children, Head }) => (
   <main>
     {children}
     <style jsx global>{`
       * {
-        font-family: "Inter", Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, serif;
+        font-family: "Inter", Menlo, Monaco, "Lucida Console", "Liberation Mono",
+          "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New",
+          monospace, serif;
       }
       body {
         margin: 0;
-        padding: 25px 50px;
       }
       p {
         font-size: 14px;
@@ -24,11 +25,9 @@ export default ({ children, Head }) => (
         line-height: 40px;
       }
       article {
-
       }
       section {
-        padding-bottom: 20px;
-        max-width: 95%;
+        /* padding: 0 40px; */
         margin: 0 auto;
       }
       button {
@@ -48,4 +47,4 @@ export default ({ children, Head }) => (
       }
     `}</style>
   </main>
-)
+);

@@ -1,13 +1,13 @@
-import { graphql } from 'react-apollo'
-import gql from 'graphql-tag'
-import { Router } from '../routes'
-import ErrorMessage from './ErrorMessage'
-import Head from 'next/head'
+import { graphql } from "react-apollo";
+import gql from "graphql-tag";
+import { Router } from "../routes";
+import ErrorMessage from "./ErrorMessage";
+import Head from "next/head";
 
-const POSTS_PER_PAGE = 10
+const POSTS_PER_PAGE = 10;
 
 function handleClick(event, id, url) {
-  event.preventDefault()
+  event.preventDefault();
   Router.push({
     pathname: `/work/${url}`,
     asPath: `/work/${url}`
@@ -15,41 +15,63 @@ function handleClick(event, id, url) {
 }
 
 function PostList({ data: { loading, error, webs }, title, extraClass }) {
-  if (error) return <ErrorMessage message='Error loading posts.' />
+  if (error) return <ErrorMessage message="Error loading posts." />;
   if (webs && webs.length) {
     return (
       <section className={extraClass}>
         <Head>
-          {title === undefined ? 
-          <>
-          <title>Work</title> 
-          <meta name="title" content="Nick Hulea's Work and Projects"></meta>
-          <meta name="description" content="Nick Hulea's Work and Projects"></meta>
-          </>
-          : ''}
+          {title === undefined ? (
+            <>
+              <title>Work</title>
+              <meta name="title" content="Nick Hulea's Work and Projects" />
+              <meta
+                name="description"
+                content="Nick Hulea's Work and Projects"
+              />
+            </>
+          ) : (
+            ""
+          )}
         </Head>
-        {title === undefined ? <h1>Work</h1> : ''}
+        {title === undefined ? <h1>Work</h1> : ""}
         <ul>
-          {webs.map((post, index) => (
-            post.URL !== title ? <li key={index + 1}>
-              <a props={post._id} href={`/work/${post.Data.Link}`} onClick={event => handleClick(event, post._id, post.Data.Link)}>
-                {post.Image !== null ? <span className="imgHero" style={{ backgroundImage: `url(https://strapi.hulea.org/${post.Image.url})` }}></span> : ''}
-                <h2>{post.Title}</h2>
-              </a>
-            </li> : ''
-          ))}
+          {webs.map((post, index) =>
+            post.URL !== title ? (
+              <li key={index + 1}>
+                <a
+                  props={post._id}
+                  href={`/work/${post.Data.Link}`}
+                  onClick={event =>
+                    handleClick(event, post._id, post.Data.Link)
+                  }
+                >
+                  {post.Image !== null /* && title === undefined */ ? (
+                    <span
+                      className={`imgHero ${extraClass}__image`}
+                      style={{
+                        backgroundImage: `url(https://strapi.hulea.org/${
+                          post.Image.url
+                        })`
+                      }}
+                    />
+                  ) : (
+                    ""
+                  )}
+                  <h2>{post.Title}</h2>
+                </a>
+              </li>
+            ) : (
+              ""
+            )
+          )}
         </ul>
         <style jsx>{`
           * {
             box-sizing: border-box;
           }
-          section {
-            padding-bottom: 20px;
-            max-width: 95%;
-            margin: 0 auto;
-          }
           a {
             position: relative;
+            display: block;
           }
           ul {
             margin: 0;
@@ -57,7 +79,6 @@ function PostList({ data: { loading, error, webs }, title, extraClass }) {
             list-style: none;
           }
           li {
-            border: 2rem solid #111;
             margin-bottom: 2em;
           }
           h2 {
@@ -68,11 +89,18 @@ function PostList({ data: { loading, error, webs }, title, extraClass }) {
             color: #fff;
             background-color: #111;
           }
+          @media only screen and (max-width: 480px) {
+            h2 {
+              font-size: 36px;
+              padding: 10px 15px;
+              width: 100%;
+            }
+          }
         `}</style>
       </section>
-    )
+    );
   }
-  return <div>Loading</div>
+  return <div>Loading</div>;
 }
 
 export const allPosts = gql`
@@ -93,13 +121,12 @@ export const allPosts = gql`
       updatedAt
     }
   }
-`
-
+`;
 
 export const allPostsQueryVars = {
   skip: 0,
   first: POSTS_PER_PAGE
-}
+};
 
 // The `graphql` wrapper executes a GraphQL query and makes the results
 // available on the `data` prop of the wrapped component (PostList)
@@ -113,14 +140,14 @@ export default graphql(allPosts, {
         },
         updateQuery: (previousResult, { fetchMoreResult }) => {
           if (!fetchMoreResult) {
-            return previousResult
+            return previousResult;
           }
           return Object.assign({}, previousResult, {
             // Append the new posts results to the old one
             allPosts: [...previousResult.allPosts, ...fetchMoreResult.allPosts]
-          })
+          });
         }
-      })
+      });
     }
   })
-})(PostList)
+})(PostList);

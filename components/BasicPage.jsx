@@ -20,7 +20,9 @@ function Post({ data: { error, basics } }) {
         </Head>
         <div key={basic.id}>
           <h1>{basic.Title}</h1>
-          <ReactMarkdown source={basic.Body} />
+          <div className="basicPage">
+            <ReactMarkdown source={basic.Body} />
+          </div>
         </div>
         <style jsx>{`
           * {
@@ -28,7 +30,8 @@ function Post({ data: { error, basics } }) {
           }
           li {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 1em;
+            line-height: 1.25;
           }
           a {
             text-decoration: none;
