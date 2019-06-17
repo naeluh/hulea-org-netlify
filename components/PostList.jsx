@@ -1,6 +1,6 @@
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
-import { Router } from "../routes";
+import { Router } from "next/router";
 import ErrorMessage from "./ErrorMessage";
 import Head from "next/head";
 
@@ -38,13 +38,7 @@ function PostList({ data: { loading, error, webs }, title, extraClass }) {
           {webs.map((post, index) =>
             post.URL !== title ? (
               <li key={index + 1}>
-                <a
-                  props={post._id}
-                  href={`/work/${post.Data.Link}`}
-                  onClick={event =>
-                    handleClick(event, post._id, post.Data.Link)
-                  }
-                >
+                <a props={post._id} href={`/work/${post.Data.Link}`}>
                   {post.Image !== null /* && title === undefined */ ? (
                     <span
                       className={`imgHero ${extraClass}__image`}
@@ -57,7 +51,11 @@ function PostList({ data: { loading, error, webs }, title, extraClass }) {
                   ) : (
                     ""
                   )}
-                  <h2>{post.Title}</h2>
+                  {title === undefined ? (
+                    <h2>{post.Title}</h2>
+                  ) : (
+                    <p>{post.Title}</p>
+                  )}
                 </a>
               </li>
             ) : (
@@ -89,11 +87,24 @@ function PostList({ data: { loading, error, webs }, title, extraClass }) {
             color: #fff;
             background-color: #111;
           }
+          p {
+            position: absolute;
+            background-color: #111;
+            color: #fff;
+            padding: 4px 8px;
+            left: 0;
+            text-align: center;
+            letter-spacing: -2px;
+            font-weight: 700;
+            top: 0;
+          }
           @media only screen and (max-width: 480px) {
             h2 {
               font-size: 36px;
               padding: 10px 15px;
               width: 100%;
+            }
+            p {
             }
           }
         `}</style>

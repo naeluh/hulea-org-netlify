@@ -50,8 +50,8 @@ function Post({ data: { error, webs } }) {
 }
 
 const post = gql`
-  query webs($url: String!) {
-    webs(where: { URL: $url }, limit: 1) {
+  query webs($id: String!) {
+    webs(where: { URL: $id }, limit: 1) {
       Title
       _id
       Image {
@@ -75,7 +75,7 @@ const post = gql`
 const ComponentWithMutation = graphql(post, {
   options: ({ router: { query } }) => ({
     variables: {
-      url: query.url
+      id: query.id
     }
   }),
   props: ({ data }) => ({

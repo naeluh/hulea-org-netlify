@@ -338,7 +338,7 @@ a:hover {
   padding: 0;
 }
 
-#weblist > li > a {
+#weblist>li>a {
   text-decoration: none;
   border: none;
   background-color: #222;
@@ -374,8 +374,19 @@ section p {
   padding: 0 40px;
 }
 
+section li,
+section label {
+  word-wrap: break-word;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: -0.25px;
+}
+
 section h1 {
-  font-size: 300%;
+  font-size: 50px;
   font-weight: 900;
   line-height: 1;
   letter-spacing: -0.05em;
@@ -383,8 +394,9 @@ section h1 {
   margin: 20px 40px;
 }
 
+
 section h2 {
-  font-size: 250%;
+  font-size: 40px;
   font-weight: bolder;
   line-height: 1;
   letter-spacing: -0.05em;
@@ -392,7 +404,7 @@ section h2 {
 }
 
 section h3 {
-  font-size: 115%;
+  font-size: 35px;
   font-weight: bolder;
   line-height: 1;
   letter-spacing: -0.05em;
@@ -400,7 +412,7 @@ section h3 {
 }
 
 section h4 {
-  font-size: 100%;
+  font-size: 30px;
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: -0.05em;
@@ -525,7 +537,7 @@ nav {
   background-color: #111;
 }
 
-nav > button {
+nav>button {
   width: 50px;
   height: 50px;
   list-style: none;
@@ -537,7 +549,7 @@ nav > button {
   padding: 0;
 }
 
-nav > button:active {
+nav>button:active {
   background-color: #222;
 }
 
@@ -733,6 +745,7 @@ textarea {
     top: 0;
     right: 0;
   }
+
   section h1 {
     font-size: 150%;
   }
@@ -1154,8 +1167,8 @@ ul {
   list-style-type: circle;
 }
 
-div.basicPage > ul:nth-child(25),
-div.basicPage > ul:nth-child(27) {
+div.basicPage>ul:nth-child(25),
+div.basicPage>ul:nth-child(27) {
   -webkit-column-count: 3;
   column-count: 3;
   list-style-type: none;
@@ -1163,13 +1176,13 @@ div.basicPage > ul:nth-child(27) {
   line-height: 1;
 }
 
-div.basicPage > ul:nth-child(27) > li,
-div.basicPage > ul:nth-child(25) > li {
+div.basicPage>ul:nth-child(27)>li,
+div.basicPage>ul:nth-child(25)>li {
   line-height: 1;
   margin-bottom: 0.5em;
 }
 
-div.basicPage > ul > li {
+div.basicPage>ul>li {
   margin-bottom: 1em;
   line-height: 1.25;
 }
@@ -1182,13 +1195,13 @@ div.basicPage {
   display: none;
 }
 
-main > article > section.worklist {
+main>article>section.worklist {
   border-top: 1em solid #111;
   padding-top: 2em;
   margin: 0 40px;
 }
 
-main > article > section.worklist > ul {
+main>article>section.worklist>ul {
   display: flex;
   align-items: stretch;
   justify-content: space-between;
@@ -1196,26 +1209,26 @@ main > article > section.worklist > ul {
   align-content: flex-start;
 }
 
-main > article > section.worklist > ul > li {
+main>article>section.worklist>ul>li {
   width: 23%;
   border: none;
 }
 
 @media only screen and (max-width: 1024px) {
-  main > article > section.worklist > ul > li {
+  main>article>section.worklist>ul>li {
     width: 48%;
     border: none;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  main > article > section.worklist > ul > li {
+  main>article>section.worklist>ul>li {
     width: 100%;
     border: none;
   }
 }
 
-main > article > section.worklist > ul > li > a > h2 {
+main>article>section.worklist>ul>li>a>h2 {
   left: 0;
   font-size: 1.25em;
   padding: 10px;
@@ -1239,6 +1252,5 @@ a.dash-link {
 form {
   margin: 0 40px;
 }
-
 
 /*# sourceMappingURL=styles.chunk.css.map*/
