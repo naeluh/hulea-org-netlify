@@ -8,7 +8,7 @@ module.exports = withCSS(
       const response = await fetch("https://strapi.hulea.org/webs");
       const postList = await response.json();
 
-      console.log(postList);
+      // console.log(postList);
 
       // tranform the list of posts into a map of pages with the pathname `/post/:id`
       const pages = postList.reduce(
@@ -22,17 +22,13 @@ module.exports = withCSS(
         {}
       );
 
-      console.log(pages);
+      // console.log(pages);
 
       // combine the map of post pages with the home
       return Object.assign({}, pages, {
         "/": { page: "/" },
         "/about": { page: "/about" },
-        "/work": { page: "/work" },
-        "/work/gifpaint": {
-          page: "/work",
-          query: { url: "gifpaint" }
-        }
+        "/work": { page: "/work" }
       });
     }
   })
