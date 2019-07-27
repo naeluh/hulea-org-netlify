@@ -363,6 +363,10 @@ a:hover {
   color: #fff;
 }
 
+section {
+  padding: 0 40px;
+}
+
 section p {
   word-wrap: break-word;
   line-height: 1.5;
@@ -371,7 +375,6 @@ section p {
   font-size: 25px;
   font-weight: 400;
   letter-spacing: -0.25px;
-  padding: 0 40px;
 }
 
 section li,
@@ -390,8 +393,6 @@ section h1 {
   font-weight: 900;
   line-height: 1;
   letter-spacing: -0.05em;
-  margin-bottom: 20px;
-  margin: 20px 40px;
 }
 
 
@@ -1198,7 +1199,6 @@ div.basicPage {
 main>article>section.worklist {
   border-top: 1em solid #111;
   padding-top: 2em;
-  margin: 0 40px;
 }
 
 main>article>section.worklist>ul {

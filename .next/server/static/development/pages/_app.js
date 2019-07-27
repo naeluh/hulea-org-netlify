@@ -93,6 +93,58 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./lib/analytics.js":
+/*!**************************!*\
+  !*** ./lib/analytics.js ***!
+  \**************************/
+/*! exports provided: initGA, logPageView, logEvent, logException */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initGA", function() { return initGA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logPageView", function() { return logPageView; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logEvent", function() { return logEvent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logException", function() { return logException; });
+/* harmony import */ var react_ga__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-ga */ "react-ga");
+/* harmony import */ var react_ga__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_ga__WEBPACK_IMPORTED_MODULE_0__);
+
+var initGA = function initGA() {
+  console.log('GA init');
+  react_ga__WEBPACK_IMPORTED_MODULE_0___default.a.initialize('UA-13081083-1');
+};
+var logPageView = function logPageView() {
+  console.log("Logging pageview for ".concat(window.location.pathname));
+  react_ga__WEBPACK_IMPORTED_MODULE_0___default.a.set({
+    page: window.location.pathname
+  });
+  react_ga__WEBPACK_IMPORTED_MODULE_0___default.a.pageview(window.location.pathname);
+};
+var logEvent = function logEvent() {
+  var category = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+
+  if (category && action) {
+    react_ga__WEBPACK_IMPORTED_MODULE_0___default.a.event({
+      category: category,
+      action: action
+    });
+  }
+};
+var logException = function logException() {
+  var description = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  var fatal = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+  if (description) {
+    react_ga__WEBPACK_IMPORTED_MODULE_0___default.a.exception({
+      description: description,
+      fatal: fatal
+    });
+  }
+};
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/assign.js ***!
@@ -919,8 +971,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_app__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_app__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/head */ "next/head");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _lib_analytics__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../lib/analytics */ "./lib/analytics.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_10__);
 
 
 
@@ -929,6 +982,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // pages/_app.js
+
 
 
 
@@ -945,18 +999,28 @@ function (_App) {
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(MyApp, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      if (!window.GA_INITIALIZED) {
+        Object(_lib_analytics__WEBPACK_IMPORTED_MODULE_9__["initGA"])();
+        window.GA_INITIALIZED = true;
+      }
+
+      Object(_lib_analytics__WEBPACK_IMPORTED_MODULE_9__["logPageView"])();
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
           Component = _this$props.Component,
           pageProps = _this$props.pageProps;
-      return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_7__["Container"], null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_8___default.a, null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("style", null, "body { margin: 0 } /* custom!! Changed */"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("meta", {
+      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_7__["Container"], null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_8___default.a, null, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("style", null, "body { margin: 0 } /* custom!! Changed */"), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("meta", {
         name: "viewport",
         content: "width=device-width, initial-scale=1.0"
-      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("meta", {
+      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("meta", {
         httpEquiv: "X-UA-Compatible",
         content: "IE=edge"
-      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(Component, pageProps));
+      })), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(Component, pageProps));
     }
   }], [{
     key: "getInitialProps",
@@ -1163,6 +1227,17 @@ module.exports = require("prop-types");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-ga":
+/*!***************************!*\
+  !*** external "react-ga" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-ga");
 
 /***/ }),
 
