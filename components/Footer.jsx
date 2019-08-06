@@ -42,6 +42,31 @@ const Footer = () => (
         </a>
       </p>
       <p>
+        Gitlab:{" "}
+        <a
+          prefetch="true"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Gitlab"
+          alt="Gitlab"
+          href="https://gitlab.com/naeluh"
+        >
+          https://gitlab.com/naeluh
+        </a>
+      </p>
+      <p>
+        <a
+          prefetch="true"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Dat"
+          alt="Dat"
+          href="dat://9f7142832a6cffaaf518ddd8a73c1ad5b152aeff66340804a41ecd362cbf2126/"
+        >
+          DAT
+        </a>
+      </p>
+      <p>
         {" "}
         <Link href="/about">
           <a title="About" alt="About" prefetch="true">

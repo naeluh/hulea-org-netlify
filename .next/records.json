@@ -1,0 +1,87 @@
+{
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!css/main.css": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin node_modules/css-loader/index.js??ref--5-1!css/font/inter.css": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "modules": {
+    "byIdentifier": {
+      "css node_modules/css-loader/index.js??ref--5-1!css/font/inter.css 0": 0,
+      "css node_modules/css-loader/index.js??ref--5-1!css/main.css 0": 1
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1
+    }
+  },
+  "chunks": {
+    "byName": {
+      "commons": 0,
+      "static/runtime/webpack.js": 1,
+      "static/dKBey1c0m7Lv4y64vjaFe/pages/_app.js": 2,
+      "static/dKBey1c0m7Lv4y64vjaFe/pages/_error.js": 3,
+      "static/dKBey1c0m7Lv4y64vjaFe/pages/about.js": 4,
+      "static/dKBey1c0m7Lv4y64vjaFe/pages/contact.js": 5,
+      "static/dKBey1c0m7Lv4y64vjaFe/pages/index.js": 6,
+      "static/dKBey1c0m7Lv4y64vjaFe/pages/work.js": 7,
+      "static/dKBey1c0m7Lv4y64vjaFe/pages/work/entry.js": 8,
+      "static/runtime/main.js": 9,
+      "static/svD8qVd8rZhWjd2HGTLQt/pages/_app.js": 10,
+      "static/svD8qVd8rZhWjd2HGTLQt/pages/_error.js": 11,
+      "static/svD8qVd8rZhWjd2HGTLQt/pages/about.js": 12,
+      "static/svD8qVd8rZhWjd2HGTLQt/pages/contact.js": 13,
+      "static/svD8qVd8rZhWjd2HGTLQt/pages/index.js": 14,
+      "static/svD8qVd8rZhWjd2HGTLQt/pages/work.js": 15,
+      "static/svD8qVd8rZhWjd2HGTLQt/pages/work/entry.js": 16,
+      "static/KcCa-EnKsX7WgLQIBVYoP/pages/_app.js": 2,
+      "static/KcCa-EnKsX7WgLQIBVYoP/pages/_error.js": 3,
+      "static/KcCa-EnKsX7WgLQIBVYoP/pages/about.js": 4,
+      "static/KcCa-EnKsX7WgLQIBVYoP/pages/contact.js": 5,
+      "static/KcCa-EnKsX7WgLQIBVYoP/pages/index.js": 6,
+      "static/KcCa-EnKsX7WgLQIBVYoP/pages/work.js": 7,
+      "static/KcCa-EnKsX7WgLQIBVYoP/pages/work/entry.js": 8
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  }
+}
