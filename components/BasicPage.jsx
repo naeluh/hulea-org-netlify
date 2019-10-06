@@ -47,6 +47,31 @@ function Post({ data: { error, basics } }) {
           h4 {
             line-height: 1.5;
           }
+          @media only screen and (max-width: 480px) {
+            * {
+              box-sizing: border-box;
+            }
+            li {
+              display: block;
+              margin-bottom: 1em;
+              line-height: 1.25;
+            }
+            a {
+              text-decoration: none;
+              padding-bottom: 0;
+              border: 0;
+              color: #000;
+              font-weight: 400;
+            }
+            ul {
+              margin: 0;
+              padding: 0;
+            }
+            section h4 {
+              line-height: 1.5;
+              font-size: 20;
+            }
+          }
         `}</style>
       </section>
     );

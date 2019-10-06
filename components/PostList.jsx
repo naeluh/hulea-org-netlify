@@ -30,8 +30,8 @@ function PostList({ data: { loading, error, webs }, title, extraClass }) {
               />
             </>
           ) : (
-            ""
-          )}
+              ""
+            )}
         </Head>
         {title === undefined ? <h1>Work</h1> : ""}
         <ul>
@@ -45,22 +45,22 @@ function PostList({ data: { loading, error, webs }, title, extraClass }) {
                       style={{
                         backgroundImage: `url(https://strapi.hulea.org/${
                           post.Image.url
-                        })`
+                          })`
                       }}
                     />
                   ) : (
-                    ""
-                  )}
+                      ""
+                    )}
                   {title === undefined ? (
                     <h2>{post.Title}</h2>
                   ) : (
-                    <p>{post.Title}</p>
-                  )}
+                      <p>{post.Title}</p>
+                    )}
                 </a>
               </li>
             ) : (
-              ""
-            )
+                ""
+              )
           )}
         </ul>
         <style jsx>{`
@@ -88,23 +88,30 @@ function PostList({ data: { loading, error, webs }, title, extraClass }) {
             background-color: #111;
           }
           p {
-            position: absolute;
             background-color: #111;
             color: #fff;
-            padding: 4px 8px;
-            left: 0;
-            text-align: center;
-            letter-spacing: -2px;
+            letter-spacing: -1.5px;
             font-weight: 700;
-            top: 0;
+            font-size: 20px;
+            padding: 10px 15px;
+            bottom: 0;
+            left: 0;
+            margin: 0;
           }
           @media only screen and (max-width: 480px) {
             h2 {
-              font-size: 36px;
+              font-size: 15px;
               padding: 10px 15px;
-              width: 100%;
+              bottom: 0;
+              left: 0;
+              margin: 0;
             }
             p {
+              font-size: 20px;
+              padding: 10px 15px;
+              bottom: 0;
+              left: 0;
+              margin: 0;
             }
           }
         `}</style>

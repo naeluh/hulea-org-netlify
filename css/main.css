@@ -235,6 +235,12 @@ section h4 {
   margin-bottom: 20px;
 }
 
+@media only screen and (max-width: 480px) {
+  section h4 {
+    font-size: 20px;
+  }
+}
+
 .buttons-container {
   position: fixed;
   right: 18px;
@@ -567,7 +573,7 @@ textarea {
   }
 
   section h3 {
-    font-size: 100%;
+    font-size: 125%;
   }
 }
 
@@ -1004,7 +1010,7 @@ div.basicPage>ul>li {
 }
 
 div.basicPage {
-  margin: 0 40px;
+  /* margin: 0 40px; */
 }
 
 .hide {
@@ -1065,5 +1071,24 @@ a.dash-link {
 }
 
 form {
-  margin: 0 40px;
+ /*  margin: 0 40px; */
+}
+
+@media only screen and (max-width: 480px) { 
+  section li,
+  section label {
+    word-wrap: break-word;
+    line-height: 2;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.25px;
+  }
+  div.basicPage>ul>li {
+    line-height: 2;
+  }
+  section p {
+    font-size: 18px;
+  }
 }
