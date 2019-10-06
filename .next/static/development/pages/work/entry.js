@@ -45449,7 +45449,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /*!**********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fwork%2Fentry&absolutePagePath=%2Fvar%2Fwww%2Fnetlify-site%2Fpages%2Fwork%2Fentry.js ***!
   \**********************************************************************************************************************************/
@@ -45472,5 +45472,5 @@ module.exports = dll_7aff549c98b978433226;
 
 /***/ })
 
-},[[6,"static/runtime/webpack.js","styles"]]]);
+},[[5,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=entry.js.map

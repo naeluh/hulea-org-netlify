@@ -967,10 +967,6 @@ div.basicPage > ul > li {
   line-height: 1.25;
 }
 
-div.basicPage {
-  /* margin: 0 40px; */
-}
-
 .hide {
   display: none;
 }
@@ -1014,8 +1010,23 @@ a.dash-link {
   display: block;
 }
 
-form {
-  /*  margin: 0 40px; */
+@media only screen and (max-width: 1024px) {
+  main > article > section.worklist > ul > li {
+    width: 30%;
+    border: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  div.basicPage > ul:nth-child(25),
+  div.basicPage > ul:nth-child(27) {
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+  main > article > section.worklist > ul > li {
+    width: 45%;
+    border: none;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -1026,13 +1037,14 @@ form {
     top: 0;
     right: 0;
   }
-
   section h1 {
     font-size: 150%;
   }
-
   section h3 {
     font-size: 125%;
+  }
+  section h4 {
+    font-size: 20px;
   }
   .overlay-content ul li a {
     font-size: 25px;
