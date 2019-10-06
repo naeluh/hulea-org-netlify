@@ -153,7 +153,7 @@ a:hover {
   padding: 0;
 }
 
-#weblist>li>a {
+#weblist > li > a {
   text-decoration: none;
   border: none;
   background-color: #222;
@@ -210,7 +210,6 @@ section h1 {
   letter-spacing: -0.05em;
 }
 
-
 section h2 {
   font-size: 40px;
   font-weight: bolder;
@@ -233,12 +232,6 @@ section h4 {
   line-height: 1.5;
   letter-spacing: -0.05em;
   margin-bottom: 20px;
-}
-
-@media only screen and (max-width: 480px) {
-  section h4 {
-    font-size: 20px;
-  }
 }
 
 .buttons-container {
@@ -339,12 +332,6 @@ nav {
   z-index: 9999;
 }
 
-@media only screen and (max-width: 480px) {
-  .list {
-    height: 50px;
-  }
-}
-
 .l1,
 .l2 {
   height: 10px;
@@ -359,7 +346,7 @@ nav {
   background-color: #111;
 }
 
-nav>button {
+nav > button {
   width: 50px;
   height: 50px;
   list-style: none;
@@ -371,7 +358,7 @@ nav>button {
   padding: 0;
 }
 
-nav>button:active {
+nav > button:active {
   background-color: #222;
 }
 
@@ -561,35 +548,6 @@ textarea {
 /* Custom, iPhone Retina */
 
 /* Extra Small Devices, Phones */
-
-@media only screen and (max-width: 480px) {
-  nav {
-    top: 0;
-    right: 0;
-  }
-
-  section h1 {
-    font-size: 150%;
-  }
-
-  section h3 {
-    font-size: 125%;
-  }
-}
-
-/* Small Devices, Tablets */
-
-@media only screen and (max-width: 768px) {
-  .overlay-content ul li a {
-    font-size: 25px;
-    text-align: right;
-  }
-
-  .imgTitle {
-    font-size: 100%;
-    margin-top: -28px;
-  }
-}
 
 /* Small Devices, Tablets */
 
@@ -989,8 +947,8 @@ ul {
   list-style-type: circle;
 }
 
-div.basicPage>ul:nth-child(25),
-div.basicPage>ul:nth-child(27) {
+div.basicPage > ul:nth-child(25),
+div.basicPage > ul:nth-child(27) {
   -webkit-column-count: 3;
   column-count: 3;
   list-style-type: none;
@@ -998,13 +956,13 @@ div.basicPage>ul:nth-child(27) {
   line-height: 1;
 }
 
-div.basicPage>ul:nth-child(27)>li,
-div.basicPage>ul:nth-child(25)>li {
+div.basicPage > ul:nth-child(27) > li,
+div.basicPage > ul:nth-child(25) > li {
   line-height: 1;
   margin-bottom: 0.5em;
 }
 
-div.basicPage>ul>li {
+div.basicPage > ul > li {
   margin-bottom: 1em;
   line-height: 1.25;
 }
@@ -1017,12 +975,12 @@ div.basicPage {
   display: none;
 }
 
-main>article>section.worklist {
+main > article > section.worklist {
   border-top: 1em solid #111;
   padding-top: 2em;
 }
 
-main>article>section.worklist>ul {
+main > article > section.worklist > ul {
   display: flex;
   align-items: stretch;
   justify-content: space-between;
@@ -1030,26 +988,12 @@ main>article>section.worklist>ul {
   align-content: flex-start;
 }
 
-main>article>section.worklist>ul>li {
+main > article > section.worklist > ul > li {
   width: 23%;
   border: none;
 }
 
-@media only screen and (max-width: 1024px) {
-  main>article>section.worklist>ul>li {
-    width: 48%;
-    border: none;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  main>article>section.worklist>ul>li {
-    width: 100%;
-    border: none;
-  }
-}
-
-main>article>section.worklist>ul>li>a>h2 {
+main > article > section.worklist > ul > li > a > h2 {
   left: 0;
   font-size: 1.25em;
   padding: 10px;
@@ -1071,10 +1015,38 @@ a.dash-link {
 }
 
 form {
- /*  margin: 0 40px; */
+  /*  margin: 0 40px; */
 }
 
-@media only screen and (max-width: 480px) { 
+@media only screen and (max-width: 480px) {
+  .list {
+    height: 50px;
+  }
+  nav {
+    top: 0;
+    right: 0;
+  }
+
+  section h1 {
+    font-size: 150%;
+  }
+
+  section h3 {
+    font-size: 125%;
+  }
+  .overlay-content ul li a {
+    font-size: 25px;
+    text-align: right;
+  }
+
+  .imgTitle {
+    font-size: 100%;
+    margin-top: -28px;
+  }
+  main > article > section.worklist > ul > li {
+    width: 100%;
+    border: none;
+  }
   section li,
   section label {
     word-wrap: break-word;
@@ -1085,7 +1057,7 @@ form {
     font-weight: 400;
     letter-spacing: -0.25px;
   }
-  div.basicPage>ul>li {
+  div.basicPage > ul > li {
     line-height: 2;
   }
   section p {
